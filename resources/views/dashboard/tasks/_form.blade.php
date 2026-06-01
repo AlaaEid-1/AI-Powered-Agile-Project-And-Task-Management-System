@@ -16,22 +16,40 @@
             class="bg-surface-container-lowest rounded-xl custom-shadow-low border border-outline-variant/30 overflow-hidden">
             <div class="p-md lg:p-lg grid grid-cols-1 lg:grid-cols-12 gap-lg">
                 <!-- Left Column: Primary Details -->
+
                 <div class="lg:col-span-8 flex flex-col gap-md">
                     <div class="flex flex-col gap-xs">
+                        @if ($errors->any())
+                    <div class="text-red-800 mb-4 border border-red-900 bg-red-300">
+                        @foreach ($errors->all() as $message)
+                            <p>{{ $message }}</p>
+                        @endforeach
+                    </div>
+                @endif
                         <label class="font-label-md text-label-md text-on-surface">Task Title</label>
                         <input name="title" value="{{ old('title', $task->title ?? '') }}"
                             class="w-full px-md py-sm rounded-xl border border-outline bg-white text-body-md font-body-md transition-all"
                             placeholder="e.g. Q4 Marketing Strategy Review" type="text">
+                        @error('title')
+                            <p class="text-red-800">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="flex flex-col gap-xs">
                         <label class="font-label-md text-label-md text-on-surface">Description</label>
                         <textarea name="description"
                             class="w-full px-md py-sm rounded-xl border border-outline bg-white text-body-md font-body-md transition-all resize-none"
                             placeholder="Provide details about this task..." rows="6">{{ old('description', $task->description ?? '') }}</textarea>
+                        @error('description')
+                            <p class="text-red-800">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="flex flex-col gap-xs">
                         <label class="font-label-md text-label-md text-on-surface">Attachments</label>
-
+                        @error('cover')
+                    @foreach ($errors->get('cover') as $error)
+                    <p class="text-red-800">{{ $error }}</p>
+                    @endforeach
+                    @enderror
                         {{-- عرض الصورة الحالية (في حالة edit) --}}
                         @if (isset($task) && $task->cover_image)
                             <div class="mb-2">
