@@ -123,15 +123,17 @@
                                             title="Edit">
                                             <span class="material-symbols-outlined text-[20px]">edit</span>
                                         </a>
-                                        <form action="{{ route('dashboard.tasks.destroy', $task->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit"
-                                                class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container/30 transition-all">
-                                                <span class="material-symbols-outlined text-[20px]">delete</span>
-                                            </button>
-                                        </form>
+          <button
+                                        onclick="confirm('Are you sure you want to delete this task?')? document.getElementById('deletetask{{ $task->id }}').submit() : null;"
+                                        class="p-2 text-on-surface-variant hover:bg-surface-container rounded-lg transition-all"
+                                        title="More">
+                                        <span class="material-symbols-outlined" data-icon="delete">delete</span>
+                                    </button>
+                                    <form style="display: none;" id="deletetask{{ $task->id }}"
+                                        action="{{ route('dashboard.tasks.destroy', $task->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
                                     </div>
                                 </td>
                             </tr>
