@@ -16,9 +16,10 @@ class TaskRequest extends FormRequest
         return [
             'title' => ['required', 'min:3', 'max:255'],
             'description' => ['nullable', 'string'],
-            'status' => ['required', 'in:not_completed,completed'],
+            'status' => ['required', 'in:todo,in_progress,done'],
             'priority' => ['required', 'in:low,medium,high'],
             'due_date' => ['nullable', 'date'],
+            'sprint_id' => ['nullable', 'exists:sprints,id'],
             'cover_image' => [
                 'nullable',
                 'image',

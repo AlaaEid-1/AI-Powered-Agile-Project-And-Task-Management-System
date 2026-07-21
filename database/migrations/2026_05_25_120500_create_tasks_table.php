@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('title', 500);
             $table->longText('description')->nullable();
             $table->string('cover_image')->nullable();
-            $table->enum('status', ['not_completed', 'completed'])
-                ->default('not_completed');
+            $table->enum('status', ['todo', 'in_progress', 'done'])
+                ->default('todo');
             $table->enum('priority', ['low', 'medium', 'high'])
                 ->default('medium');
             $table->timestamp('due_date')->nullable();
