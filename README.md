@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 AI-Powered Agile Project and Task Management System
+# 🚀 NexaTask AI
 
 *The Next-Generation AI-Powered Agile Management Platform*
 
@@ -20,9 +20,9 @@ Elevate your productivity with an intelligent workspace that plans, breaks down,
 
 ## 📖 Project Overview
 
-**AI-Powered Agile Project and Task Management System** is an advanced task management and agile sprint planning application built for modern development teams and solo creators. 
+**NexaTask AI** is an advanced task management and agile sprint planning application built for modern development teams and solo creators. 
 
-Traditional project management tools require heavy manual input. Breaking down complex features into actionable tasks, planning sprints, and maintaining a healthy backlog can drain hours of productive time. **AI-Powered Agile Project and Task Management System** solves this by integrating Artificial Intelligence directly into your workflow. Simply describe your feature, and the AI will analyze it, generate technical user stories, and map out a comprehensive sprint plan automatically.
+Traditional project management tools require heavy manual input. Breaking down complex features into actionable tasks, planning sprints, and maintaining a healthy backlog can drain hours of productive time. **NexaTask AI** solves this by integrating Artificial Intelligence directly into your workflow. Simply describe your feature, and the AI will analyze it, generate technical user stories, and map out a comprehensive sprint plan automatically.
 
 ---
 
@@ -97,7 +97,7 @@ graph TD;
 
 ## 🤖 The AI Workflow (How it Works)
 
-AI-Powered Agile Project and Task Management System is more than a standard CRUD application; it acts as a proactive team member.
+NexaTask AI is more than a standard CRUD application; it acts as a proactive team member.
 
 1. **Input:** You create a new "Feature Idea" in the dashboard.
 2. **Contextualization:** The `AIService` gathers current sprint data and existing backlog items to build a comprehensive prompt.
@@ -119,10 +119,10 @@ Follow these steps to set up the project in your local development environment.
 ### 2. Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AI-Powered Agile Project and Task Management System.git
+git clone https://github.com/yourusername/nexatask-ai.git
 
 # Navigate to the project directory
-cd AI-Powered Agile Project and Task Management System
+cd nexatask-ai
 
 # Install PHP dependencies (Backend)
 composer install
