@@ -9,8 +9,7 @@ sed -i "s/<VirtualHost \*:80>/<VirtualHost *:${PORT}>/g" /etc/apache2/sites-avai
 
 # Run Laravel migrations
 echo "Running Laravel migrations..."
-php artisan migrate --force
-
+php artisan migrate:fresh --force
 # Clear and rebuild Laravel cache (optional but recommended)
 php artisan config:cache
 php artisan route:cache
